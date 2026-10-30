@@ -1,0 +1,22 @@
+{
+  "sites": [
+    {
+      "id": "ufficio",
+      "name": "Ufficio",
+      "subnet": "10.0.1.0/24",
+      "gateway": "10.0.1.31",
+      "agent_url": "http://10.0.1.31:8765",
+      "token": "TOKEN-UBUNTU"
+    },
+    {
+      "id": "casa",
+      "name": "Casa",
+      "subnet": "10.0.2.0/24",
+      "gateway": "10.0.2.2",
+      "agent_url": "http://10.0.2.2:8765",
+      "token": "TOKEN-RASPBERRY"
+    }
+  ],
+  "poll_seconds": 10,
+  "control_remote_agent": true
+}

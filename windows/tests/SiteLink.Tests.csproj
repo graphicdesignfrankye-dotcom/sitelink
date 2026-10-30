@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Prove della logica indipendente da Windows: dotnet run con il progetto tests -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NoWarn>CA1416</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../src/Core/Cidr.cs;../src/Core/Config.cs;../src/Core/AgentClient.cs;../src/Core/Proc.cs;../src/Core/RouteManager.cs;../src/Core/Authorizer.cs" />
+  </ItemGroup>
+</Project>

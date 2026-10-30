@@ -1,0 +1,9 @@
+{
+  "site_name": "ufficio",
+  "token": "CAMBIAMI-genera-con-openssl-rand-hex-32",
+  "listen": ["10.0.1.31", "tailscale"],
+  "port": 8765,
+  "advertise_routes": ["10.0.1.0/24"],
+  "remote_ping_target": "10.0.2.2",
+  "tailscale_bin": "tailscale"
+}

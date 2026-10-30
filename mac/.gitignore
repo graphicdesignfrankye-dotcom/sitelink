@@ -1,0 +1,4 @@
+.venv-dmg/
+build/
+dist/
+.build/

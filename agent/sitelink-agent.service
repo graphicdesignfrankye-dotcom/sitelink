@@ -1,0 +1,18 @@
+[Unit]
+Description=SiteLink agent (toggle collegamento site-to-site)
+After=network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+User=sitelink
+Group=sitelink
+ExecStart=/usr/bin/python3 /opt/sitelink/sitelink_agent.py --config /etc/sitelink/agent.json
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

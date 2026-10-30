@@ -1,0 +1,16 @@
+# build e file temporanei
+.build/
+build/
+dist/
+release/
+.venv-dmg/
+DerivedData/
+xcuserdata/
+windows/src/bin/
+windows/src/obj/
+windows/tests/bin/
+windows/tests/obj/
+.DS_Store
+# configurazioni reali (contengono i token): committare solo i *.example.json
+config.json
+agent.json

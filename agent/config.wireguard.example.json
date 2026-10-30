@@ -1,0 +1,14 @@
+{
+  "site_name": "ufficio",
+  "token": "CAMBIAMI-genera-con-openssl-rand-hex-32",
+  "listen": ["10.0.1.31", "iface:wg0"],
+  "port": 8765,
+  "advertise_routes": ["10.0.1.0/24"],
+  "remote_ping_target": "10.0.2.2",
+  "backend": "command",
+  "commands": {
+    "status": ["systemctl", "is-active", "--quiet", "wg-quick@wg0"],
+    "enable": ["sudo", "-n", "systemctl", "start", "wg-quick@wg0"],
+    "disable": ["sudo", "-n", "systemctl", "stop", "wg-quick@wg0"]
+  }
+}
