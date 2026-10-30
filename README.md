@@ -20,8 +20,9 @@ accende e spegne il collegamento dal Mac, da Windows o dall'iPhone, senza aprire
 | **Mac** | `mac/` | App nella barra dei menu: pulsante ON/OFF, riconosce la sede, aggiunge/toglie la route. |
 | **Windows** | `windows/` | App nella tray, stesso wizard e stessa logica del Mac. |
 | **iPhone** | `ios/` | App SwiftUI che parla solo con gli agent; azioni per Comandi rapidi. |
+| **Android** | `android/` | App Kotlin (Android 8+) che parla solo con gli agent; APK da scaricare; riquadro nelle Impostazioni rapide. |
 
-Ogni cartella ha un suo `README.md` con i dettagli (`windows/`, `ios/`). Questo è il quadro completo.
+Ogni cartella ha un suo `README.md` con i dettagli (`windows/`, `ios/`, `android/`). Questo è il quadro completo.
 
 ## Come funziona
 
@@ -211,6 +212,13 @@ poi cancella il file perché contiene i token). I token stanno nel Keychain.
 | L'app smette di aprirsi dopo 7 giorni | Limite dell'Apple ID gratuito: reinstalla da Xcode. |
 | Un comando rapido dice "non configurato" | Apri l'app una volta e completa il wizard. |
 
+## 5. Android
+
+Scarica `SiteLink-Android.apk` dalla Release direttamente dal telefono, consenti "Installa app sconosciute" per il
+browser e installa (Play Protect può avvisare: "Installa comunque"). Configurazione e problemi comuni uguali
+all'iPhone (indirizzo alternativo con l'IP Tailscale per stare fuori dalle due reti, permesso Rete locale su Android 17+).
+Dettagli, compilazione e firma: `android/README.md`.
+
 ---
 
 ## Sicurezza
@@ -236,6 +244,7 @@ Prima di pubblicare, rimuovi dalle cartelle ogni `config.json` reale e usa solo 
 ```bash
 agent/tests/run_local_test.sh        # agent: backend, peer, errori (agent finti in locale)
 ios/tests/run_logic_test.sh          # logica dell'app iPhone contro due agent in locale
+android/tests/run_logic_test.sh      # logica dell'app Android (richiede JDK 17, vedi android/README.md)
 dotnet run --project windows/tests   # logica Windows (CIDR, route, attività, client agent)
 ```
 
